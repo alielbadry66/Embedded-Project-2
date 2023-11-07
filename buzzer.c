@@ -3,13 +3,13 @@
 
 void initBuzzer() {
     // Configure the buzzer pin as an output
-    DDRB |= (1 << PB2);
+    DDRB |= (1 << PB3);
 }
 
 void activateBuzzer() {
-    PORTB |= (1 << PB2);  // Turn on the buzzer
+    PORTB |= (1 << PB3);  // Turn on the buzzer
 }
 
 void deactivateBuzzer() {
-    PORTB &= ~(1 << PB2); // Turn off the buzzer
+    PORTB &= ~(1 << PB3); // Turn off the buzzer
 }
