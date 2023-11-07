@@ -1,15 +1,18 @@
 #include "IntegerToString.h"
 
-void intToString(int num, char *str) {
+void integerToString(int num, char *str) {
     // Handle the sign (positive or negative)
+    int i;
     if (num < 0) {
         num = -num;
         *str = '-';
         str++;
+        i=1;
     }
-
+    else{    
     // Convert the integer part to a string
-    int i = 0;
+      i = 0;
+    }
 
     do {
         str[i] = (char)(num % 10) + '0';
@@ -25,7 +28,7 @@ void intToString(int num, char *str) {
         char temp = str[j];
         str[j] = str[len - j - 1];
         str[len - j - 1] = temp;
-        j++;
+       j++;
     }
 
     str[i] = '\0';  // Null-terminate the string
