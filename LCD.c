@@ -2,10 +2,10 @@
 #include <util/delay.h>	  /* Include Delay header file */
 #include "LCD.h"
 #include "IntegerToString.h"
-#include "IntegerToString.c"
 #if !defined(__AVR_ATmega328P__)
 #include <avr/iom328p.h>
 #endif
+
 
 #define LCD_Dir  DDRD			/* Define LCD data port direction */
 #define LCD_Port PORTD		/* Define LCD data port */
@@ -88,6 +88,7 @@ void updateLCD(float temperature, float upperLimit) {
     char tempStr[16];
     int temperatureInt = (int)temperature;
     integerToString(temperatureInt, tempStr);
+    
 
     LCD_String(tempStr);
 
@@ -95,6 +96,7 @@ void updateLCD(float temperature, float upperLimit) {
     LCD_String("Upper: ");
     
     char upperLimitStr[16];
+
     int upperLimitInt = (int)upperLimit;
     integerToString(upperLimitInt, upperLimitStr);
 
