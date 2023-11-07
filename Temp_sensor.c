@@ -16,7 +16,7 @@ void initADC() {
 // Function to read the temperature
 uint16_t readADC() {
     // Select the ADC channel
-    ADMUX = (ADMUX & 0xF8) | (TEMPERATURE_SENSOR_PIN & 0x07);
+    ADMUX = (ADMUX & 0b11111000) | (TEMPERATURE_SENSOR_PIN & 0b00000111);
     
     // Start the conversion
     ADCSRA |= (1 << ADSC);
@@ -38,7 +38,7 @@ float readTemperature() {
     uint16_t adcValue = readADC();
     
     // Convert ADC value to temperature in Celsius
-    float temperatureC = (adcValue * 0.48876) - 50.0;  // LM35 provides 10mV per degree Celsius
+    float temperatureC = (adcValue /10) - 50.0;  // LM35 provides 10mV per degree Celsius
     
     return temperatureC;
 }
