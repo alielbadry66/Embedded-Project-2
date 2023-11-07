@@ -2,8 +2,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define UP_BUTTON_PIN (1 << PB0)
-#define DOWN_BUTTON_PIN (1 << PB1)
+#define UP_BUTTON_PIN (1 << PB2)
+#define DOWN_BUTTON_PIN (1 << PB5)
 
 void initButtons() {
     // Initialize the buttons as input and enable pull-up resistors
