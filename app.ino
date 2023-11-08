@@ -9,6 +9,8 @@
 #include "buzzer.c"
 #include "buttons.h"
 #include "buttons.c"
+#include "IntegerToString.c"
+#include "IntegerToString.h"
 
 #define TEMP_UPPER_LIMIT 40.0
 
