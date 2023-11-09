@@ -93,7 +93,7 @@ void updateLCD(float temperature, float upperLimit) {
     LCD_String(tempStr);
 
     LCD_Command(0xC0);
-    LCD_String("Upper: ");
+    LCD_String("Temp Limit: ");
     
     char upperLimitStr[16];
 
