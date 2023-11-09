@@ -34,11 +34,11 @@ void initTemperatureSensor() {
 }
 
 float readTemperature() {
-    // Read the temperature from the LM35
+    // Read the temperature from the LM35DZ
     uint16_t adcValue = readADC();
     
     // Convert ADC value to temperature in Celsius
-    float temperatureC = (adcValue /10) - 50.0;  // LM35 provides 10mV per degree Celsius
+    float temperatureC = (adcValue /120) - 50.0;  // LM35DZ provides 120mV per degree Celsius
     
     return temperatureC;
 }
